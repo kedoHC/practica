@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Menú de navegación</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="tres-niveles.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<nav class="navbar">
+		<ul class="down">
+			<li class="active">
+				<a href="">Opción de menú 1</a>
+				<nav class="subnavbar">
+					<ul>
+						<li>
+							<a href="">Opción de menú 1</a></li>
+						<li>
+							<a href="">Opción de menú 2</a>
+						</li>
+						<li class="active">
+							<a href="">Opción de menú 3</a>
+							<nav class="third-level">
+								<a href="">Opción de menú 1</a>
+								<a href="">Opción de menú 2</a>
+								<a href="" class="active">Opción de menú 3</a>
+								<a href="">Opción de menú 4</a>
+								<a href="">Opción de menú 5</a>
+							</nav>
+						</li>
+						<li>
+							<a href="">Opción de menú 4</a>
+						</li>
+						<li>
+							<a href="">Opción de menú 5</a>
+						</li>
+					</ul>
+				</nav>
+			</li>
+			<li>
+				<a href="">Opción de menú 2</a>
+			</li>
+			<li>
+				<a href="">Opción de menú 3</a>
+			</li>
+			<li>
+				<a href="">Opción de menú 4</a>
+			</li>
+			<li>
+				<a href="">Opción de menú 5</a>
+			</li>
+		</ul>
+	</nav>
+
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="  crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+
+			// creamos el icono "hamburguesa" para el menu
+			$(".navbar").prepend('<span class="menu"></span>');
+
+
+			// añadimos la clase sel cuando el menu tenga que desplegarse
+			$('.menu').bind('click',function(){
+				$(".down").toggleClass('sel');
+			});
+		});
+	</script>
+</body>
+</html>

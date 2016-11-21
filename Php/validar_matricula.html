@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo aprenderaprogramar.com</title><meta charset="utf-8">
+		<script type="text/javascript">
+			window.onload = function () {
+				document.formularioContacto.matricula.focus();
+				document.formularioContacto.addEventListener('submit', validarFormulario);
+			}
+			function validarFormulario(evObject) {
+				evObject.preventDefault();
+				var todoCorrecto = true;
+				var formulario = document.formularioContacto;
+				if (/^[a-zA-Z]{2}\d{4}[a-zA-Z]{2}\d{3}$/.test(formulario.matricula.value)==false ) {
+					//alert ('Matricula incorrecta'); todoCorrecto=false;
+					todoCorrecto=false;
+					document.getElementById("texto-ayuda").innerHTML = "La matricula no cumple el formato ";
+					document.formularioContacto.matricula.focus();
+				}
+				if (todoCorrecto == true) {
+					formulario.submit();
+				}
+			}
+		</script>
+	</head>
+<body>
+<!-- Formulario de contacto -->
+<form name ="formularioContacto" class="formularioTipo1" method="POST" action="alta_form.php">
+	<label for="matricula"><span>matricula:</span><input id="matricula" type="text" name="matricula" onfocus="if(this.value=='matricula')this.value=''; " /></label>
+	<input type="submit" value="Enviar">
+	<input type="reset" value="Cancelar">
+	<p id="texto-ayuda"></p>
+</form>
+</body>
+</html>

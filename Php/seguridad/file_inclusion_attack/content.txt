@@ -1,0 +1,7 @@
+<?php
+
+//phpinfo();
+//echo '<pre>';
+//echo `dir`;
+$cont = file_get_contents('connection.php');
+echo $cont;

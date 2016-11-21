@@ -1,0 +1,154 @@
+/****
+STYLES GUIDE:
+0. RESET
+1. LAYOUT
+2. GENERIC ITEMS
+3. PARTS OF WEB
+4. LIST
+5. FORM
+6. ANIMATIONS
+-----------------
+*/
+
+
+/* -------- 0. RESET -------- */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* -------- 1. LAYOUT -------- */
+
+	body { text-align: center; font: 300 20px/1.4 'Roboto Condensed'; color:#4d8db1;}
+
+	.header { display: flex; justify-content:center; align-items:center;}
+
+	.navbar .content, .navbar a { display: flex; justify-content:center; align-items:center; }
+		.navbar a { min-height: 60px; padding:0 15px; }
+
+/* -------- 2. GENERIC ITEMS -------- */
+
+	.content { width: 1024px; margin: 0 auto;}
+
+	.header { height: 450px; background: url(images/dummy-header.jpg) no-repeat center top; background-size: cover;}
+
+	.navbar { border-bottom: 1px dashed #71a4c1;}
+
+	.who, .navbar { background: #4d8db1; color: #fff;}
+	.who, .location, .tratamientos, .tarifas { padding: 80px 0;}
+		.location { padding-bottom: 0;}
+
+	.title { margin-bottom: 40px; font:60px 'Stint Ultra Condensed'; text-transform: uppercase;}
+
+	p { margin-bottom: 30px;}
+
+	.btn { display: inline-block; line-height: 50px; padding: 0 80px; border:2px solid #fff; color: #fff; text-decoration: none;}
+
+/* -------- 3. PARTS OF WEB -------- */
+
+	.navbar a { color: #fff; font: 22px 'Stint Ultra Condensed'; text-transform: uppercase; text-decoration: none;}
+
+	.who .title { color: #a6c6d8;} 
+
+	.map img { max-width: 100%; width: 100%; height: auto; margin-bottom: -7px;}
+
+	.tratamientos { background: #264658; color:#fff; }
+
+	.tarifas { height: 450px; background: url(images/dummy-tarifas.jpg) no-repeat center top; background-size: cover; text-align: left; color:#fff;}
+		.tarifas p { max-width: 40%;}
+		.tarifas .btn { margin-top: 100px;}
+
+/* -------- 4. LIST -------- */
+	
+	.list-tratamientos { display: flex; justify-content:center; align-items:center; margin-top: 80px; }
+		.list-tratamientos li { padding:0 40px 30px 40px;}
+		.list-tratamientos figure { position: relative; display: flex; justify-content:center; align-items:center; flex-flow:column; width: 100px; height: 100px; }
+			.list-tratamientos figure:after { content: ''; position: absolute; left: 0; top: 0; z-index: 0; width: 100px; height: 100px; background: #fff; border-radius: 50%; }
+			.list-tratamientos img { position: relative; z-index: 1;}
+				.list-tratamientos figcaption { position: absolute; left: 0; right: 0; bottom: -40px;}
+
+/* -------- 5. FORM -------- */
+
+/* -------- 6. ANIMATIONS -------- */
+
+	.header img { transition:1s all;}
+	.header:hover img { transform:translate(0,-10px);}
+
+	.navbar a { transition:.3s all;}
+	.navbar a:hover { transform:translate(0,5px);}
+
+	.btn { transition:.3s all;}
+	.btn:hover { transform:scale(.8,.8);}
+
+	.list-tratamientos img { transition:1s all;}
+	.list-tratamientos img:hover { transform:rotate(360deg);}
+
+	.who { perspective: 1000px;}
+		.who p { transform: rotateX(60deg);}
+
+	.header img {
+	    animation-name: animacion-logo;
+	    animation-duration:1s;
+	    animation-timing-function: linear;
+	    animation-delay: 2s;
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate;
+	}
+
+	/**** animation keyframes ****/
+
+	@keyframes animacion-logo {
+	    0% {
+	    	margin-top:0;
+	    }
+	    
+	    100% {
+	    	margin-top:30px;
+	    }
+	}
