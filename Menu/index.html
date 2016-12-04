@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Menu Sticky</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://use.fontawesome.com/a707b00bb2.js"></script>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<style type="text/css">
+		body{
+			height: 2000px;
+		}
+		#menu .menu-item{
+			background-color: #3266ba;
+			color: #f4f7f7;
+			height: 80px;
+			border-left: 1px solid #f4f7f7;
+		}
+		.active{
+			background-color: #0a443f !important;
+			color: #fff !important;
+		}
+		.parallax {
+		    background-image: url("img/imagen.jpeg");
+		    height: 500px;
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+		#menumenu{
+			position: relative;
+			z-index: 2;
+		}
+		#div-btn-inicio{
+			position: fixed;
+			bottom: 50px;
+			right: 50px;
+			background-color: blue;
+			color: #fff;
+			z-index: 3;
+			height: 50px;
+			width: 50px;
+			border-radius: 100px;
+			opacity: 0.7;
+		}
+		#btn-inicio{
+			font-size: 30px;
+			padding-top: 6px;
+			cursor: pointer;
+		}
+	</style>
+	<body>
+		<div id="portada" class="parallax"></div>
+		<div id="menu">
+		    <div class="container">
+		        <div class="row" id="menumenu">
+		        	<a href="#"><div class="col-xs-3 menu-item active"><h2 class="text-center"><span class="fa fa-home">&nbsp&nbsp</span>Home</h2></div></a>
+		        	<a href="#"><div class="col-xs-3 menu-item"><h2 class="text-center"><span class="fa fa-briefcase">&nbsp</span>Productos</h2></div></a>
+		        	<a href="#"><div class="col-xs-3 menu-item"><h2 class="text-center"><span class="fa fa-user">&nbsp</span>Servicios</h2></div></a>
+		        	<a href="#"><div class="col-xs-3 menu-item"><h2 class="text-center"><span class="fa fa-shopping-cart">&nbsp</span>Tienda Online</h2></div></a>
+		        </div>
+		    </div>
+		</div>
+		<div id="div-btn-inicio"><p class="text-center"><span id="btn-inicio" class="fa fa-arrow-up"></span></p></div>
+		
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<script src="js/jquery.sticky.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 		<script type="text/javascript">
+ 			$(document).ready(function(){
+			    $("#menu").sticky({ topSpacing: 0});
+			  });
+ 			$('#menu').on('sticky-start', function() {
+ 				$(".menu-item").animate({ height: '60px', opacity: '0.7'});
+ 				$(".menu-item > h2").animate({fontSize: '20px'});
+ 			 });
+ 			$('#menu').on('sticky-end', function() {
+ 				$(".menu-item").animate({ height: '80px', opacity: '1'});
+ 				$(".menu-item > h2").animate({fontSize: '30px'});
+ 			 });
+ 			 $("#div-btn-inicio").click(function() {
+			    $('html,body').animate({scrollTop: $("#portada").offset().top}, 1000);
+			  });
+
+ 			 $("#div-btn-inicio").hide();
+ 			  $(window).on('scroll', function() {
+			    if($(window).scrollTop() > 100) {
+			    	$("#div-btn-inicio").show("slow");
+			    } else {
+			    	$("#div-btn-inicio").hide("slow");
+			    }
+			  });
+ 		</script>
+	</body>
+</html>

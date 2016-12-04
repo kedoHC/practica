@@ -1,0 +1,14 @@
+GREENSOCK 101
+
+how to use the .to(), .from(), .fromTo() and .set() methods
+
+.to()	->Empieza con las propiedades CSS y termina con las establecidas por TweenLite
+.from()	->Empieza con las propiedades de TweenLite y termina con las propiedades CSS
+.fromTo	->	sintaxis: TweenLite.formTo(img, 1,{x:-200}, {x:200});	->Define las propiedades de donde empresa y donde termina el Tween, pasando las propiedades CSS (intermedio).
+.set()	->sintaxis: TweenLite.formTo(img, {x:-200});	->Especifica las propiedades CSS en donde va a estar el elemento, sobreescribe el CSS del elemento. (Se elimina el parametro que define el tiempo del Tween) 
+
+		autoAlpha: 0	->desaparece el objeto.
+		autoAlpha: 1	->aparece el objeto
+
+ease.Power1.easeIn	->Empieza lento termina rapido
+ease.Power1.easeOut	->Empieza rapido termina lento
