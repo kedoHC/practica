@@ -9,6 +9,9 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<script src="https://use.fontawesome.com/a707b00bb2.js"></script>
+		
+		<!-- bxSlider CSS file -->
+		<link href="css/jquery.bxslider.css" rel="stylesheet" />
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,6 +63,9 @@
 			padding-top: 6px;
 			cursor: pointer;
 		}
+		#slider{
+			height: 400px !important;
+		}
 	</style>
 	<body>
 		<div id="portada" class="parallax"></div>
@@ -73,17 +79,39 @@
 		        </div>
 		    </div>
 		</div>
+		<div id="slider">
+  			<ul class="bxslider">
+			  <li><img class="img-responsive" src="img/1.jpeg" /></li>
+			  <li><img class="img-responsive" src="img/2.jpeg" /></li>
+			  <li><img class="img-responsive" src="img/3.jpeg" /></li>
+			  <li><img class="img-responsive" src="img/4.jpeg" /></li>
+			</ul>
+			<div class="outside">
+			  <p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
+			</div>       
+		</div>
 		<div id="div-btn-inicio"><p class="text-center"><span id="btn-inicio" class="fa fa-arrow-up"></span></p></div>
 		
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- bxSlider Javascript file -->
+		<script src="js/jquery.bxslider.min.js"></script>
 		<script src="js/jquery.sticky.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		
+		
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
  		<script type="text/javascript">
  			$(document).ready(function(){
 			    $("#menu").sticky({ topSpacing: 0});
+			   $('.bxslider').bxSlider({
+				   	  auto: true,
+	  				  nextSelector: '#slider-next',
+					  prevSelector: '#slider-prev',
+					  nextText: 'Onward →',
+					  prevText: '← Go back'
+			   });
 			  });
  			$('#menu').on('sticky-start', function() {
  				$(".menu-item").animate({ height: '60px', opacity: '0.7'});
@@ -108,3 +136,8 @@
  		</script>
 	</body>
 </html>
+<!-- Latest compiled and minified CSS & JS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
