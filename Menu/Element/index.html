@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dogs!</title>
+
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="images/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		
+		<!-- Angular JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+	    <script src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" type="text/css" href="libs/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<script src="https://use.fontawesome.com/a707b00bb2.js"></script>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<!-- <script src="libs/angular/angular.min.js"></script>
+	    <script src="libs/jquery/dist/jquery.min.js"></script>
+	    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script> -->
+
+	 	<script src="app.js"></script>
+
+	    <script src="controladores/inicio.js"></script>
+	    <script src="controladores/validarform.js"></script>
+
+	</head>
+	<body ng-app="elementWeb">
+		<nav class="navbar" id="main-menu" >
+		  <div class="container-fluid" >
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icono-menu fa fa-bars"></span>
+		      </button>
+		      <a class="navbar-brand visible-xs" href="#!/"><img src="images/paw.png" width="40%"></a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav nav-pills nav-justified">
+		        <li><a href="#!/dream">DREAM</a></li>
+		        <li><a href="#!/enjoy">ENJOY</a></li>
+		        <li><a href="#!/work">WORK</a></li> 
+		        <li><a href="#!/believe">BELIEVE</a></li> 
+		      </ul>
+		    </div>
+		  </div>
+		  <a href="#!/"><img class="hidden-xs" id="img_paw" src="images/paw.png"></a>
+		</nav>
+			
+		<div ng-view>
+			
+		</div>
+
+		<div id="formulario" ng-controller="validarform" >
+		    <div class="container marco-formulario">
+		            <h2>Send your data to us for no apparent reason!</h2>
+		            <div class="row">
+		                <div class="col-xs-12 col-lg-6 form-1">
+		                    <form name="contacto" id="contacto" method="POST" ng-submit="mandarInfo()" novalidate >
+		                        <p>First Name</p>
+		                        <input class="form-control" type="text" name="name" ng-model="form.nombre" required><br><br>
+		                        
+		                </div>
+						<div class="col-xs-12 col-lg-6 form-2">
+		                         <p>Last name</p>
+		                    <input class="form-control" type="text" name="lastname" ng-model="form.apellido" required><br><br>
+		                </div>  
+		                <div class="col-xs-12 col-lg-6 form-1">
+		                	 <p>Favorite dog</p>
+		                        <select class="form-control" name="dogs" form="contacto" ng-model="form.dog">
+		                            <option value="dog1">Dog1</option>
+		                            <option value="dog2">Dog2</option>
+		                            <option value="dog3">Dog3</option>
+		                            <option value="dog4">Dog4</option>
+		                        </select>
+		                        <br>
+		                   </div>
+		                   <div class="col-xs-12 col-sm-12 col-lg-6 form-2">
+			                    <p>Food you would buy for a cool dog</p>
+			                    <input type="checkbox" name="fooddry" value="dry"> <span>Dog dry food</span>
+			                    <input type="checkbox" name="foodwet" value="wet"> <span>Dog wet food</span>
+			                    <input type="checkbox" name="foodhuman" value="human"> <span>Human Food</span>
+		                    </div>
+		                </div>
+		                 <div class="alert alert-warning" ng-show="(!form.nombre && contacto.$submitted) || (!form.apellido && contacto.$submitted) || (!form.dog && contacto.$submitted) ">Rellenar Campos Requeridos</div> 
+		                <div id="boton-envio" class="row" ng-show="form.nombre && form.apellido && form.dog">
+		                    <div class="col-xs-12">
+		                        <input class="btn btn-primary" type="submit" value="SEND NOW!">
+		                        </form>
+		                    </div>
+		                </div> 
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<div id="pie">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-xs-12">
+		                <p class="text-center">CATS ARE COOL TO</p>  
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="libs/bootstrap.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 		
+	</body>
+</html>

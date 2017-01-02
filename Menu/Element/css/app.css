@@ -1,0 +1,230 @@
+/*
+#4d4a47 gris
+#fd9940 naranaja
+#19af54 verde
+#eb312e rojo
+#136bfb azul
+#704219 naranaja-obscuro */
+
+body{
+    background-color: #4d4a47; 
+}
+#main-menu,
+#main-menu .navbar-collapse,
+#main-menu .navbar-header,
+.navbar-toggle{
+	background-color: #fd9940;
+}
+#main-menu a,
+#main-menu .navbar-collapse a{
+	color: #000;
+}
+#main-menu .icono-menu{
+	color: #000;
+	font-size: 35px;
+}
+#main-menu #myNavbar ul li a{
+	font-size: 22px;
+}
+#main-menu #myNavbar ul li a:hover,
+#main-menu #myNavbar ul li a:focus{
+	background-color: #fd9940;
+	color: #fff;
+	font-weight: bold;
+}
+.navbar{
+	margin-bottom: 0px;
+}
+#img_paw{
+	position: absolute;
+	top: 40px;
+	left: 48%;
+	width: 3%;
+	z-index: 9999;
+}
+#cabecera{
+	position: relative;
+	z-index: -1;
+    background-color: #4d4a47; 
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+#cabecera h1{
+    font-size: 50px;
+    color: #fd9940;
+}
+#cabecera .lineas{
+    border-top: 1px solid #fd9940;
+    margin-top: 50px;
+}
+
+
+/*imagenes*/
+#imagenes img{
+	width: 100%;
+}
+#contenedor-100 h1{
+	position: absolute;
+	top: 7%;
+	right: 7%;
+	text-transform: uppercase;
+	color: #19af54;
+}
+#contenedor-50 h1{
+	position: absolute;
+	top: 7%;
+	right: 7%;
+	text-transform: uppercase;
+	color: #eb312e;
+}
+#contenedor-50-1 h1{
+	position: absolute;
+	top: 7%;
+	right: 7%;
+	text-transform: uppercase;
+	color: #136bfb;
+}
+#contenedor-50-2 h1{
+	position: absolute;
+	top: 7%;
+	right: 7%;
+	text-transform: uppercase;
+	color: #fd9940;
+}
+.marco{
+	position: absolute;
+	top: 2%;
+	left: 2%;
+	height: 96%;
+	width: 96%;
+	border: 2px solid #19af54;
+}
+.marco2{
+	position: absolute;
+	top: 4%;
+	left: 4%;
+	height: 93%;
+	width: 93%;
+	border: 2px solid #eb312e;
+}
+.marco3{
+	position: absolute;
+	top: 6%;
+	left: 4%;
+	height: 90%;
+	width: 92%;
+	border: 2px solid #136bfb;
+}
+.marco4{
+	position: absolute;
+	top: 6%;
+	left: 4%;
+	height: 89%;
+	width: 92%;
+	border: 2px solid #fd9940;
+}
+#img-3, #img-4{
+	height: 335px;
+}
+
+/*formulario*/
+#formulario{
+	margin-top: 10px;
+	color: #fd9940;
+}
+.marco-formulario{
+	border: 1px solid #000;
+	padding: 30px; 
+}
+#formulario-1{
+	padding-right: 15px;
+}
+#formulario-2{
+	padding-left: 15px;
+}
+#boton-envio input[type="submit"]{
+	width: 250px;
+	background-color: #fd9940;
+	border: none;
+	color: #000; 
+}
+#formulario .form-1{
+	padding-right: 15px;
+}
+#formulario .form-2{
+	padding-left: 15px;
+}
+.form-2 input[name="foodwet"],
+.form-2 input[name="foodhuman"]{
+	margin-left: 50px;
+}
+#boton-envio input[type="submit"]{
+	margin-top: 50px;
+}
+#pie{
+	background-color: #704219;
+	color: #000;
+	padding-top: 5px;
+}
+
+@media (max-width: 749px) { 
+	#main-menu{
+		border: none;
+	}
+	#main-menu,
+	#main-menu .navbar-header{
+	background-color: #4d4a47;
+	}
+	#cabecera h1{
+		font-size: 30px;
+	}
+	#cabecera{
+		padding-top: 170px;
+	}
+	#imagenes img{
+		height: 500px;
+	}
+
+
+	#formulario .form-1{
+		padding-right: 0px;
+	}
+	#formulario .form-2{
+		padding-left: 0px;
+	}
+	.form-2 input[name="foodwet"],
+	.form-2 input[name="foodhuman"]{
+		margin-left: 20px;
+	}
+}
+@media (min-width: 750px) and (max-width: 969px) {
+	#img-2{
+		height: 600px;
+	}
+	#img-3, #img-4{
+		height: 300px;
+	}
+
+	#formulario .form-1{
+		padding-right: 0px;
+	}
+	#formulario .form-2{
+		padding-left: 0px;
+	}
+}
+@media (min-width: 970px) and (max-width: 1169px) {
+	#img-2{
+		height: 600px;
+	}
+	#img-3, #img-4{
+		height: 300px;
+	}
+	#formulario .form-1{
+		padding-right: 0px;
+	}
+	#formulario .form-2{
+		padding-left: 0px;
+	}
+}
+@media (min-width: 1170px) { 
+}

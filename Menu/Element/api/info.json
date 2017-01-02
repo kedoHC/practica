@@ -1,0 +1,8 @@
+{
+	"datos":[
+		{"id":1, "text":"dream", "image":"images/dog1.jpg", "name": "Copy Copy"},
+		{"id":2, "text":"enjoy", "image":"images/dog2.jpg", "name": "Mario Hugo"},
+		{"id":3, "text":"work", "image":"images/dog3.jpg", "name": "Adjetivo"},
+		{"id":4, "text":"believe", "image":"images/dog4.jpg", "name": "Elemento"}
+	]
+}
